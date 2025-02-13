@@ -7,37 +7,38 @@
     <title>Be My Valentine</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background-color: #fdf7f3;
+            background-color: #f8f1f1;
             color: #333;
             text-align: center;
             overflow: hidden;
         }
 
         header {
-            background-color: #ff69b4;
+            background-color: #9b4d96;
             color: white;
-            padding: 60px 20px;
-            animation: bounceIn 1s ease-out;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 80px 20px;
+            animation: fadeIn 1s ease-out;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 3.8em;
+            font-size: 3.5em;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            animation: bounceIn 1s ease-out;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            animation: fadeIn 1s ease-out;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         header p {
-            font-size: 1.7em;
-            margin: 10px 0;
-            animation: bounceIn 2s ease-out;
+            font-size: 1.5em;
+            margin: 15px 0;
             font-style: italic;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            animation: fadeIn 2s ease-out;
         }
 
         .content {
@@ -47,48 +48,49 @@
             height: 70vh;
             flex-direction: column;
             text-align: center;
-            animation: fadeInUp 2s ease-out;
+            animation: slideIn 2s ease-out;
         }
 
         .content h2 {
-            font-size: 2.8em;
-            margin: 20px 0;
-            color: #ff69b4;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2.4em;
+            margin: 30px 0;
+            color: #9b4d96;
+            font-family: 'Georgia', serif;
+            font-style: italic;
             animation: pulse 1.5s infinite;
         }
 
         .heart {
-            font-size: 7em;
-            color: #ff4c77;
+            font-size: 6em;
+            color: #f5a1c0;
             animation: heartbeat 1.5s infinite;
             margin: 20px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
         }
 
         .button {
             background-color: #fff;
-            color: #ff4c77;
-            padding: 25px 50px;
-            font-size: 1.4em;
+            color: #9b4d96;
+            padding: 20px 45px;
+            font-size: 1.3em;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 30px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            animation: bounce 1.5s infinite;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-out;
         }
 
         .button:hover {
-            background-color: #ff4c77;
+            background-color: #9b4d96;
             color: white;
-            transform: scale(1.1);
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
         }
 
         footer {
-            background-color: #ff4c77;
+            background-color: #9b4d96;
             text-align: center;
             padding: 20px 10px;
             font-size: 1.2em;
@@ -96,22 +98,22 @@
             position: absolute;
             bottom: 0;
             width: 100%;
+            font-family: 'Georgia', serif;
         }
 
-        @keyframes bounceIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
-        @keyframes fadeInUp {
+        @keyframes slideIn {
             0% { transform: translateY(100px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
 
@@ -120,60 +122,54 @@
             50% { transform: scale(1.3); }
             100% { transform: scale(1); }
         }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
     </style>
 </head>
 <body>
 
 <header>
     <h1>Will You Be My Valentine?</h1>
-    <p>Because I’m falling for you... deeper than Cupid’s arrows! 💘</p>
+    <p>There’s no greater joy than sharing this beautiful journey with you.</p>
 </header>
 
 <div class="content">
-    <h2>To my one and only,</h2>
-    <p>Every moment with you is a new chapter in our endless love story. This Valentine's Day, let’s create a tale as sweet as the one we’re living. 💖</p>
+    <h2>To My Dearest,</h2>
+    <p>Your presence in my life is a gift I cherish every day. This Valentine’s Day, let us celebrate the extraordinary love that binds our hearts together, beyond words and beyond time. 💕</p>
     
     <!-- Heart Animation -->
     <div class="heart">❤️</div>
     
-    <p><strong>So, what do you say? Will you be my Valentine and make my heart skip a beat?</strong></p>
+    <p><strong>Will you accept my heart, forever and always?</strong></p>
     
-    <!-- Button with Fun Effect -->
-    <button class="button" onclick="celebrate()">Yes, forever and always!</button>
+    <!-- Button with Elegant Effect -->
+    <button class="button" onclick="celebrate()">Yes, with all my heart.</button>
 </div>
 
 <footer>
-    <p>Made with an eternal love that knows no bounds by Sai Babu 💖</p>
+    <p>Created with all my love, Sai Babu 💖</p>
 </footer>
 
 <!-- JavaScript for Sound and Confetti -->
 <script>
     function celebrate() {
-        // Cheesy Sound Effect
+        // Elegant Sound Effect
         var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
         audio.play();
 
         // Confetti Effect
         const confettiSettings = {
             target: 'body',
-            max: 100,
-            size: 1,
+            max: 80,
+            size: 2,
             animate: true,
             props: ['circle', 'square'],
-            colors: [[255, 100, 0], [255, 0, 255], [0, 255, 255]],
-            clock: 20
+            colors: [[255, 100, 100], [150, 100, 255], [255, 200, 0]],
+            clock: 15
         };
         const confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
         
         // Display Love Message
-        alert('I love you more than words can say, forever and always!');
+        alert('I will love you forever and always.');
     }
 </script>
 

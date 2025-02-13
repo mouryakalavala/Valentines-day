@@ -12,16 +12,20 @@
             padding: 0;
             background-color: #f8f8f8;
             color: #333;
+            overflow: hidden;
         }
         header {
-            background-color: #e63946;
+            background-color: #ff4c77;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
+            animation: fadeIn 2s ease-in-out;
         }
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: bounceIn 1s ease-out;
         }
         header p {
             font-size: 1.5em;
@@ -34,11 +38,14 @@
             height: 60vh;
             flex-direction: column;
             text-align: center;
+            animation: slideUp 2s ease-out;
         }
         .content h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 20px 0;
-            color: #e63946;
+            color: #ff4c77;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: pulse 1.5s infinite;
         }
         iframe {
             width: 80%;
@@ -46,10 +53,11 @@
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 3s ease-in-out;
         }
         .button {
             background-color: #f1faee;
-            color: #e63946;
+            color: #ff4c77;
             padding: 15px 30px;
             font-size: 1.2em;
             border: none;
@@ -57,9 +65,10 @@
             cursor: pointer;
             margin-top: 20px;
             transition: all 0.3s ease;
+            animation: bounce 2s infinite;
         }
         .button:hover {
-            background-color: #e63946;
+            background-color: #ff4c77;
             color: white;
             transform: scale(1.1);
         }
@@ -68,7 +77,31 @@
             text-align: center;
             padding: 20px 10px;
             font-size: 1.2em;
-            color: #e63946;
+            color: #ff4c77;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
     </style>
 </head>
@@ -87,12 +120,33 @@
     <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" title="Perfect by Ed Sheeran"></iframe>
     
     <p>Click below if your heart says yes!</p>
-    <button class="button" onclick="alert('Forever and always, yes!')">Yes!</button>
+    <button class="button" onclick="celebrate()">Yes!</button>
 </div>
 
 <footer>
-    <p>Made with love by Sai</p>
+    <p>Made with love by [Your Name]</p>
 </footer>
+
+<script>
+    function celebrate() {
+        // Confetti effect
+        const confettiSettings = {
+            target: 'body',
+            max: 100,
+            size: 1,
+            animate: true,
+            props: ['circle', 'square'],
+            colors: [[255, 100, 0], [0, 255, 255], [255, 255, 0]],
+            clock: 20
+        };
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+        
+        alert('Forever and always, yes!');
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
 
 </body>
 </html>
